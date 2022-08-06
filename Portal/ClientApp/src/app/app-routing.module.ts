@@ -8,9 +8,9 @@ import { AuthGuard } from './services/auth.guard';
 const routes: Routes = [
   { path: '', component: LoginComponent, canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent },
-  { path: 'employees', component: EmployeesComponent, canActivate: [AuthGuard]},
-  { path: 'employees/add', component: AddEmployeeComponent, canActivate: [AuthGuard]},
-  { path: 'employees/edit/:id', component: AddEmployeeComponent, canActivate: [AuthGuard]}];
+  { path: 'employees', component: EmployeesComponent},
+  { path: 'employees/add', component: AddEmployeeComponent},
+  { path: 'employees/edit/:id', component: AddEmployeeComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

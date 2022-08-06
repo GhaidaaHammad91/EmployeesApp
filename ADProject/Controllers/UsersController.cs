@@ -85,7 +85,17 @@ namespace ADProject.Controllers
             var securityToken = (JwtSecurityToken)tokenHandler.ReadToken(token.JWTToken);
             var username = securityToken.Claims.FirstOrDefault(c => c.Type == "unique_name")?.Value;
 
-            var user = context.Users.Where(u => u.Name == username).FirstOrDefault();
+            var id = 0;
+            try
+            {
+                id = int.Parse(username);
+            }
+            catch
+            {
+                id = 0;
+            }
+
+            var user = context.Users.Where(u =>(id != 0 && u.Id == id) || (u.Name == username)).FirstOrDefault();
             //var username = principal.Identity.Name;
             var _reftable = context.refreshtokens.FirstOrDefault(o => o.UserId == user.Id && o.RefreshToken == token.RefreshToken);
             if (_reftable == null)

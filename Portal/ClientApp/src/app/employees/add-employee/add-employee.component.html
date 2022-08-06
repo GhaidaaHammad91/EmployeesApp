@@ -9,7 +9,7 @@
         <div class="form-group">
           <label for="firstName">First Name</label>
           <input type="text" id="firstName" maxlength="50" class="form-control" formControlName="firstName" autocomplete="off" />
-          <span *ngIf="firstName && firstName.invalid && firstName.touched" class="error">Please enter your first name</span>
+          <span *ngIf="firstName && firstName.invalid" class="error">Please enter your first name</span>
         </div>
       </div>
     </div>
@@ -18,7 +18,7 @@
         <div class="form-group">
           <label>Last Name</label>
           <input type="text" class="form-control" maxlength="50" formControlName="lastName" autocomplete="off" />
-          <span *ngIf="lastName && lastName.invalid && lastName.touched" class="error">Please enter your last name</span>
+          <span *ngIf="lastName && lastName.invalid" class="error">Please enter your last name</span>
         </div>
       </div>
     </div>
@@ -28,7 +28,7 @@
         <div class="form-group">
           <label>Email</label>
           <input type="text" class="form-control" maxlength="50" formControlName="email" autocomplete="off" />
-          <span *ngIf="email && email.invalid && email.touched" class="error">Please enter valid email</span>
+          <span *ngIf="email && email.invalid" class="error">Please enter valid email</span>
         </div>
       </div>
     </div>
@@ -37,7 +37,7 @@
         <div class="form-group">
           <label>Phone</label>
           <input type="text" class="form-control" maxlength="50" formControlName="phone" autocomplete="off" />
-          <span *ngIf="phone && phone.invalid && phone.touched" class="error">Please enter phone</span>
+          <span *ngIf="phone && phone.invalid" class="error">Please enter phone</span>
         </div>
       </div>
     </div>
@@ -47,7 +47,7 @@
         <div class="form-group">
           <label>Position</label>
           <input type="text" class="form-control" maxlength="50" formControlName="position" autocomplete="off" />
-          <span *ngIf="position && position.invalid && position.touched" class="error">Please enter position</span>
+          <span *ngIf="position && position.invalid" class="error">Please enter position</span>
         </div>
       </div>
     </div>
