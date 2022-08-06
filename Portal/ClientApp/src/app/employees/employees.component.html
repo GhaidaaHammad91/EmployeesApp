@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <a  routerLink="/add"  id="addButton" class="btn btn-success btn-rounded">+ Add New Employee</a>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12">
+      <table class="table table-bordered table-striped table-hover" id="datatable" role="grid">
+        <thead class="bg-primary text-white">
+          <tr role="row">
+            <th scope="col">#</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Position</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of employeesdata$; let i = index">
+            <td>{{emp.Id}}</td>
+            <td>{{emp.FirstName}}</td>
+            <td>{{emp.LastName}}</td>
+            <td>{{emp.email}}</td>
+            <td>{{emp.phone}}</td>
+            <td>{{emp.Position}}</td>
+            <td><button routerLink="edit/{{emp.Id}}" class="btn btn-primary">Edit</button> | <button (click)="delete(emp.Id)" class="btn btn-danger">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
